@@ -36,13 +36,19 @@ add action=mark-connection chain=prerouting in-interface=ether3 \
     new-connection-mark=isp3_con passthrough=yes
 add action=mark-connection chain=prerouting dst-address-type=!local \
     in-interface=ether5 new-connection-mark=isp1_con passthrough=yes \
-    per-connection-classifier=both-addresses:3/0
+    per-connection-classifier=both-addresses:5/0
+add action=mark-connection chain=prerouting dst-address-type=!local \
+    in-interface=ether5 new-connection-mark=isp1_con passthrough=yes \
+    per-connection-classifier=both-addresses:5/1
 add action=mark-connection chain=prerouting dst-address-type=!local \
     in-interface=ether5 new-connection-mark=isp2_con passthrough=yes \
-    per-connection-classifier=both-addresses:3/1
+    per-connection-classifier=both-addresses:5/2
 add action=mark-connection chain=prerouting dst-address-type=!local \
     in-interface=ether5 new-connection-mark=isp3_con passthrough=yes \
-    per-connection-classifier=both-addresses:3/2
+    per-connection-classifier=both-addresses:5/3
+add action=mark-connection chain=prerouting dst-address-type=!local \
+    in-interface=ether5 new-connection-mark=isp3_con passthrough=yes \
+    per-connection-classifier=both-addresses:5/4
 add action=mark-routing chain=prerouting connection-mark=isp1_con \
     in-interface=ether5 new-routing-mark=to_isp1 passthrough=yes
 add action=mark-routing chain=prerouting connection-mark=isp2_con \
