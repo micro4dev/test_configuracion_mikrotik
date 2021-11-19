@@ -11,13 +11,6 @@ add address=192.168.3.2/24 interface=ether3 network=192.168.3.0
 add address=192.168.4.2/24 interface=ether4 network=192.168.4.0
 add address=192.168.10.1/24 interface=ether10 network=192.168.10.0
 
-/ip address
-add address=192.168.1.2/24 interface=ether1 network=192.168.1.0
-add address=192.168.2.2/24 interface=ether2 network=192.168.2.0
-add address=192.168.3.2/24 interface=ether3 network=192.168.3.0
-add address=192.168.4.2/24 interface=ether4 network=192.168.4.0
-add address=192.168.10.1/24 interface=ether10 network=192.168.10.0
-
 /ip dns
 set allow-remote-requests=yes cache-size=5048KiB servers=1.0.0.1,8.8.8.8
 /ip firewall filter
